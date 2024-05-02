@@ -20,4 +20,11 @@ describe('Contact Us Page Tests', () => {
         await ContactUsPage.clickSubmitButton();
         await expect (await ContactUsPage.getValidationMessage).toBeDisplayed();
     })
+
+    it('Open Report Abuse Form', async () => {
+        await MainPage.clickContactUsButton();
+        await ContactUsPage.scrollToReportAbuse();
+        await ContactUsPage.clickReportAbuseButton();
+        await expect(browser).toHaveUrl('https://telnyx.com/report-abuse');
+    })
 })

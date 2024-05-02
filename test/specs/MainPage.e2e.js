@@ -31,6 +31,18 @@ describe('Main Page Tests', () => {
         await expect(await MainPage.getComparePricingSection).toHaveText('Save 47% per message by switching to Telnyx');
     })
 
+    it('Main title present on the Telnyx VS Twilio page', async () => {
+        await MainPage.scrollToTelnyxVSTwilioButton();
+        await MainPage.clickTelnyxVSTwilioButton();
+        await expect(MainPage.getMainTwilioTitle).toBeDisplayed();
+    })
+
+    it('Main title present on Terms and Conditions page', async () => {
+        await MainPage.scrollToTermsAndConditionsButton();
+        await MainPage.clickTermsAndConditionsButton()
+        await expect(MainPage.getTermsAndConditionsMainTitle).toBeDisplayed();
+    })
+
     it('Verify the email input on the main page', async () => {
         const email = await RandomData.generateRandomEmail();
         await MainPage.scrollToEmailInput();

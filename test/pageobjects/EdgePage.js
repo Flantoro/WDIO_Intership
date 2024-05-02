@@ -11,6 +11,10 @@ class EdgePage{
         return $('main h2');
     }
 
+    get getMainTitle(){
+        return $('main h1');
+    }
+
     async fillEmailInput(email){
         $('[id="Email"]').setValue(email);
         await browser.pause(200);

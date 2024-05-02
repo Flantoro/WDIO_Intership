@@ -38,4 +38,11 @@ describe('Edge Page Tests', () => {
         await EdgePage.scrollToAllArticleSection();
         await expect (await EdgePage.getAllAcrticlesSection).toBeDisplayed();
     })
+
+    it('Main title is present on the Blog page', async () => {
+        await expect(MainPage.getResourcesButton).toBeClickable();
+        await MainPage.clickResourcesButton();
+        await MainPage.clickBlogButton();
+        await expect(EdgePage.getMainTitle).toBeDisplayed();
+    })
 })

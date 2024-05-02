@@ -14,6 +14,14 @@ class ContactUsPage{
     async clickSubmitButton(){
         $('[type="submit"]').click();
     }
+
+    async scrollToReportAbuse(){
+        (await $('div>a[href="https://telnyx.com/report-abuse"]')).scrollIntoView();
+    }
+
+    async clickReportAbuseButton(){
+        (await $('div>a[href="https://telnyx.com/report-abuse"]')).click();
+    }
 }
 
 export default new ContactUsPage();

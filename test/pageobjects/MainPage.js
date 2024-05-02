@@ -12,8 +12,28 @@ class MainPage {
       return $('[id="radix-:Rmljm:"]');
   }
 
+  get getMainTwilioTitle(){
+    return $('main h1');
+  }
+
+  get getTermsAndConditionsMainTitle(){
+    return $('main h1');
+  }
+
+  get getTermsandConditionsButton(){
+    return $('footer [href="/terms-and-conditions"]');
+  }
+
   get getComparePricingSection(){
     return $('[id="radix-:R19d3llm:"] p strong');
+  }
+
+  async scrollToTermsAndConditionsButton(){
+    (await this.getTermsandConditionsButton).scrollIntoView();
+  }
+
+  async clickTermsAndConditionsButton(){
+    (await this.getTermsandConditionsButton).click();
   }
 
   async scrollToComparePricingSection(){
@@ -65,7 +85,7 @@ class MainPage {
   }
 
   async clickSolutionsButton(){
-      $('[href="/solutions"]').first().click();
+      $('[href="/solutions"]').click();
   }
 
   async clickContactUsButton(){
