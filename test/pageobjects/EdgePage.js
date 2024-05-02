@@ -7,12 +7,13 @@ class EdgePage{
         return $('[class="c-iaFiUj"] p');
     }
 
-    get getRelatedAcrticlesSection(){
-        return $('main section').last();
+    get getAllAcrticlesSection(){
+        return $('main h2');
     }
 
     async fillEmailInput(email){
         $('[id="Email"]').setValue(email);
+        await browser.pause(200);
     }
 
     async clickSubscribeButton(){
@@ -23,8 +24,8 @@ class EdgePage{
         $('[id="Email"]').scrollIntoView();
     }
 
-    async scrollToRelatedArticleSection(){
-       this.getRelatedAcrticlesSection.scrollIntoView();
+    async scrollToAllArticleSection(){
+       this.getAllAcrticlesSection.scrollIntoView();
     }
 }
 

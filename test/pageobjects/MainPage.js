@@ -1,11 +1,11 @@
 class MainPage {
 
   get getDownloadFullCoverageText(){
-      return $('main div div div p').first();
+      return $('main div div div p');
   }
 
-  get getOurNetworkFeauresSection(){
-      return $('[contenttype="sectionTextCards"]');
+  get getNetworkMapSection(){
+      return $('[id="network-map-section"]');
   }
 
   get getResourcesButton(){
@@ -13,7 +13,7 @@ class MainPage {
   }
 
   get getComparePricingSection(){
-      return $('[data-state="open"] p').eq(1);
+    return $('[id="radix-:R19d3llm:"] p strong');
   }
 
   async scrollToComparePricingSection(){
@@ -21,7 +21,7 @@ class MainPage {
   }
 
   async clickResourcesButton(){
-      this.getResourcesButton.realClick();
+      (await this.getResourcesButton).click();
   }
 
   async clickArticleButton(){
@@ -29,11 +29,11 @@ class MainPage {
   }
 
   async clickBlogButton(){
-      $('[href="/resources"]').first().click();
+      $('[href="/resources"]').click();
   }
 
-  async scrollToOurNetworkFeaturesSection(){
-      this.getOurNetworkFeauresSection.scrollIntoView();
+  async scrollToNetworkMapSection(){
+      this.getNetworkMapSection.scrollIntoView();
   }
 
   async scrollToOurNetworkButton(){
@@ -69,7 +69,7 @@ class MainPage {
   }
 
   async clickContactUsButton(){
-      $('[href="/contact-us"]').first().click();
+      $('[href="/contact-us"]').click();
   }
 
   async clickSignUpButton(){
@@ -81,7 +81,7 @@ class MainPage {
   }
 
   async clickBottomSignUpButton(){
-      $('[action="/sign-up"] button').first().click();
+      $('[action="/sign-up"] button').click();
   }
 
   async scrollToTelnyxVSTwilioButton(){

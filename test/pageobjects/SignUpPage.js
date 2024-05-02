@@ -36,6 +36,10 @@ class SignUpPage{
       return $('[id="email"]');
   }
 
+  get getValidationError(){
+      return $('[id="error"]');
+  }
+
   async fillEmailInput(email){
     (await $('[id="email"]')).setValue(email);
   }
@@ -61,13 +65,14 @@ class SignUpPage{
   }
 
   async doubleClickSignUpButton(){
-      $('[type="submit"]').first().click();
-      cy.wait(100);
-      $('[type="submit"]').first().click();
+      $('[type="submit"]').click();
+      await browser.pause(100);
+      $('[type="submit"]').click();
   }
 
   async clickTermsAndConditionsButton(){
-      $('[for="terms_and_conditions"] a').first().invoke('removeAttr', 'target').click();
+      const element = await $('[href="https://telnyx.com/legal/terms-and-conditions-of-service/terms-and-conditions-of-service-2023-09-26"]');
+      await element.click();
   }
 }
 
