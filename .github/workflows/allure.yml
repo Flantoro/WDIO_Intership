@@ -1,0 +1,54 @@
+name: WebdriverIO Tests with Allure Report
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "18"
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Run WebdriverIO Tests
+              run: npm run wdio
+              continue-on-error: true
+
+            - name: Generate Allure report
+              if: always()
+              run: |
+                  npm install -g allure-commandline
+                  allure generate allure-results --clean
+              continue-on-error: true
+
+            - name: Upload Results
+              uses: actions/upload-artifact@v1
+              if: always()
+              with:
+                  name: allure-results
+                  path: ./allure-results
+
+            - name: Publishing Allure artifact to Github Actions
+              uses: actions/upload-artifact@v2
+              if: always()
+              with:
+                  name: allure-report
+                  path: ./allure-report
+
+            - name: Deploy report
+              uses: JamesIves/github-pages-deploy-action@4.1.3
+              if: always()
+              with:
+                  branch: report
+                  folder: allure-report

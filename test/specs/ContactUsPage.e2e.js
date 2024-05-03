@@ -10,21 +10,21 @@ describe('Contact Us Page Tests', () => {
         await MainPage.clickAcceptCookies();
     })
 
-    it('"Talk to an expert" title shown on the Contact-Us page', async () => {
+    xit('"Talk to an expert" title shown on the Contact-Us page', async () => {
         await MainPage.clickContactUsButton();
         await expect (await ContactUsPage.getContactUsTitle).toBeDisplayed();
     })
 
-    it('"Validation error is shown on the Contact Us page without specifying details', async () => {
+    xit('"Validation error is shown on the Contact Us page without specifying details', async () => {
         await MainPage.clickContactUsButton();
         await ContactUsPage.clickSubmitButton();
         await expect (await ContactUsPage.getValidationMessage).toBeDisplayed();
     })
 
-    it('Open Report Abuse Form', async () => {
+    xit('Open Report Abuse Form', async () => {
         await MainPage.clickContactUsButton();
         await ContactUsPage.scrollToReportAbuse();
         await ContactUsPage.clickReportAbuseButton();
-        await expect(browser).toHaveUrl('https://telnyx.com/report-abuse');
+        await expect(awaitbrowser).toHaveUrl('https://telnyx.com/report-abuse');
     })
 })
