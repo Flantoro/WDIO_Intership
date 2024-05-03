@@ -40,14 +40,14 @@ describe('Sign Up Page Tests', () => {
         await expect(await SignUpPage.getEmailValidationMessage).toBeDisplayed();
     })
 
-    it('Validation message shown after registration form fulled in', async () => {
+    it('"One Last Step" message shown after registration form fulled in', async () => {
         await SignUpPage.fillEmailInput(await RandomData.generateRandomEmail());
         await SignUpPage.fillFirstNameInput(await RandomData.generateRandomString());
         await SignUpPage.fillLastNameInput(await RandomData.generateRandomString());
         await SignUpPage.fillPasswordInput(await RandomData.generateRandomPassword());
         await SignUpPage.checkTermsAndConditionsCheckbox();
         await SignUpPage.doubleClickSignUpButton();
-        await expect(await SignUpPage.getValidationError).toBeDisplayed();
+        await expect(await SignUpPage.getOneLastStepMessage).toBeDisplayed();
     })
 
     it('The conditions header shown on the "Terms & Conditions" page', async () => {

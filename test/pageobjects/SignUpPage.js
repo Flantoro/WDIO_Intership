@@ -40,6 +40,10 @@ class SignUpPage{
       return $('[id="error"]');
   }
 
+  get getOneLastStepMessage(){
+    return $('main h1');
+  }
+
   async fillEmailInput(email){
     (await $('[id="email"]')).setValue(email);
   }
