@@ -2,6 +2,7 @@ import { expect } from '@wdio/globals'
 import MainPage from '../pageobjects/MainPage.js'
 import SignUpPage from '../pageobjects/SignUpPage.js'
 import RandomData from '../helpers/RandomData.js'
+import testData from '../fixtures/testData.js'
 
 describe('Main Page Tests', () => {
     
@@ -28,7 +29,7 @@ describe('Main Page Tests', () => {
         await MainPage.scrollToTelnyxVSTwilioButton();
         await MainPage.clickTelnyxVSTwilioButton();
         await MainPage.scrollToComparePricingSection();
-        await expect(await MainPage.getComparePricingSection).toHaveText('Save 47% per message by switching to Telnyx');
+        await expect(await MainPage.getComparePricingSection).toHaveText(testData.telnyxDiscountMessage);
     })
 
     it('Main title present on the Telnyx VS Twilio page', async () => {

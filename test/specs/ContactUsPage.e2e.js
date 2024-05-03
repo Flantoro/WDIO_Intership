@@ -1,6 +1,7 @@
 import { expect } from '@wdio/globals'
 import MainPage from '../pageobjects/MainPage.js'
 import ContactUsPage from '../pageobjects/ContactUsPage.js'
+import testData from '../fixtures/testData.js'
 
 describe('Contact Us Page Tests', () => {
     
@@ -25,6 +26,6 @@ describe('Contact Us Page Tests', () => {
         await MainPage.clickContactUsButton();
         await ContactUsPage.scrollToReportAbuse();
         await ContactUsPage.clickReportAbuseButton();
-        await expect(browser).toHaveUrl('https://telnyx.com/report-abuse');
+        await expect(browser).toHaveUrl(testData.reportAbuseUrl);
     })
 })
