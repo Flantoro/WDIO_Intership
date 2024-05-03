@@ -10,14 +10,14 @@ describe('Solutions Page Tests', () => {
         await MainPage.clickAcceptCookies();
     })
 
-    xit('Travel title shown on the "Travel and Hospitality" page', async () => {
+    it('Travel title shown on the "Travel and Hospitality" page', async () => {
         await MainPage.clickSolutionsButton();
         await SolutionsPage.scrollToTravelSection();
         await SolutionsPage.clickTravelSection();
         await expect(SolutionsPage.getTravelMainTitle).toBeDisplayed();
     })
 
-    xit('Main title shown on the Solutions page', async () => {
+    it('Main title shown on the Solutions page', async () => {
         await MainPage.clickSolutionsButton();
         await expect(SolutionsPage.getMainTitle).toBeDisplayed();
     })

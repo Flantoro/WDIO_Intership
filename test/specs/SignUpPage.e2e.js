@@ -12,7 +12,7 @@ describe('Sign Up Page Tests', () => {
         await MainPage.clickSignUpButton();
     })
 
-    xit('Validation error message shown after registration details filled with 11 chars password', async () => {
+    it('Validation error message shown after registration details filled with 11 chars password', async () => {
         await SignUpPage.fillEmailInput(await RandomData.generateRandomEmail());
         await SignUpPage.fillFirstNameInput(await RandomData.generateRandomString());
         await SignUpPage.fillLastNameInput(await RandomData.generateRandomString());
@@ -22,7 +22,7 @@ describe('Sign Up Page Tests', () => {
         await expect(await SignUpPage.getMinPasswordValidationMessage).toBeDisplayed();
     })
 
-    xit('Validation errors shown if no credentials entered in Sign Up form', async () => {
+    it('Validation errors shown if no credentials entered in Sign Up form', async () => {
         await SignUpPage.clickSignUpButton();
         await expect(await SignUpPage.getEmailValidationMessage).toBeDisplayed();
         await expect(await SignUpPage.getFirstNameValidationMessage).toBeDisplayed();
@@ -31,7 +31,7 @@ describe('Sign Up Page Tests', () => {
         await expect(await SignUpPage.getTermsAndConditionsValidationMessage).toBeDisplayed();
     })
 
-    xit('Validation error message shown after registration details filled except email', async () => {
+    it('Validation error message shown after registration details filled except email', async () => {
         await SignUpPage.fillFirstNameInput(await RandomData.generateRandomString());
         await SignUpPage.fillLastNameInput(await RandomData.generateRandomString());
         await SignUpPage.fillPasswordInput(await RandomData.generateRandomPassword());
@@ -40,7 +40,7 @@ describe('Sign Up Page Tests', () => {
         await expect(await SignUpPage.getEmailValidationMessage).toBeDisplayed();
     })
 
-    xit('Validation message shown after registration form fulled in', async () => {
+    it('Validation message shown after registration form fulled in', async () => {
         await SignUpPage.fillEmailInput(await RandomData.generateRandomEmail());
         await SignUpPage.fillFirstNameInput(await RandomData.generateRandomString());
         await SignUpPage.fillLastNameInput(await RandomData.generateRandomString());
@@ -50,7 +50,7 @@ describe('Sign Up Page Tests', () => {
         await expect(await SignUpPage.getValidationError).toBeDisplayed();
     })
 
-    xit('The conditions header shown on the "Terms & Conditions" page', async () => {
+    it('The conditions header shown on the "Terms & Conditions" page', async () => {
         await SignUpPage.clickTermsAndConditionsButton();
         const handles = await browser.getWindowHandles();
         await browser.switchToWindow(handles[handles.length - 1]);  

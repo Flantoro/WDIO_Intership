@@ -11,7 +11,7 @@ describe('Edge Page Tests', () => {
         await MainPage.clickAcceptCookies();
     })
 
-    xit('Kelsie Anderson profile picture shown on the Edge page', async () => {
+    it('Kelsie Anderson profile picture shown on the Edge page', async () => {
         await expect(MainPage.getResourcesButton).toBeClickable();
         await MainPage.clickResourcesButton();
         await MainPage.clickBlogButton();
@@ -19,7 +19,7 @@ describe('Edge Page Tests', () => {
         await expect(await EdgePage.getKelsieProfilePicture).toBeDisplayed();
     })
 
-    xit('Success message shown after subscribing for a latest articles via Edge page', async () => {
+    it('Success message shown after subscribing for a latest articles via Edge page', async () => {
         await expect(MainPage.getResourcesButton).toBeClickable();
         await MainPage.clickResourcesButton();
         await MainPage.clickBlogButton();
@@ -30,7 +30,7 @@ describe('Edge Page Tests', () => {
         await expect(await EdgePage.getSuccesMessage).toBeDisplayed();
     })
 
-    xit('Related articles section is present on the Edge page', async () => {
+    it('Related articles section is present on the Edge page', async () => {
         await expect(MainPage.getResourcesButton).toBeClickable();
         await MainPage.clickResourcesButton();
         await MainPage.clickBlogButton();
@@ -39,7 +39,7 @@ describe('Edge Page Tests', () => {
         await expect (await EdgePage.getAllAcrticlesSection).toBeDisplayed();
     })
 
-    xit('Main title is present on the Blog page', async () => {
+    it('Main title is present on the Blog page', async () => {
         await expect(MainPage.getResourcesButton).toBeClickable();
         await MainPage.clickResourcesButton();
         await MainPage.clickBlogButton();

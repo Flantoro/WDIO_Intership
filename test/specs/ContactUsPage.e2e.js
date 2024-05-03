@@ -10,18 +10,18 @@ describe('Contact Us Page Tests', () => {
         await MainPage.clickAcceptCookies();
     })
 
-    xit('"Talk to an expert" title shown on the Contact-Us page', async () => {
+    it('"Talk to an expert" title shown on the Contact-Us page', async () => {
         await MainPage.clickContactUsButton();
         await expect (await ContactUsPage.getContactUsTitle).toBeDisplayed();
     })
 
-    xit('"Validation error is shown on the Contact Us page without specifying details', async () => {
+    it('"Validation error is shown on the Contact Us page without specifying details', async () => {
         await MainPage.clickContactUsButton();
         await ContactUsPage.clickSubmitButton();
         await expect (await ContactUsPage.getValidationMessage).toBeDisplayed();
     })
 
-    xit('Open Report Abuse Form', async () => {
+    it('Open Report Abuse Form', async () => {
         await MainPage.clickContactUsButton();
         await ContactUsPage.scrollToReportAbuse();
         await ContactUsPage.clickReportAbuseButton();
