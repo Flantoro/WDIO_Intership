@@ -25,6 +25,6 @@ describe('Contact Us Page Tests', () => {
         await MainPage.clickContactUsButton();
         await ContactUsPage.scrollToReportAbuse();
         await ContactUsPage.clickReportAbuseButton();
-        await expect(awaitbrowser).toHaveUrl('https://telnyx.com/report-abuse');
+        await expect(browser).toHaveUrl('https://telnyx.com/report-abuse');
     })
 })
