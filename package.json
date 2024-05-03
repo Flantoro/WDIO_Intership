@@ -1,5 +1,5 @@
 {
-  "name": "WiseSolution_project",
+  "name": "WDIO_Intership",
   "type": "module",
   "devDependencies": {
     "@wdio/allure-reporter": "^8.36.1",
@@ -9,7 +9,9 @@
     "@wdio/spec-reporter": "^8.32.2"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "chrome": "wdio run ./configs/chrome.conf.js",
+    "firefox": "wdio run ./configs/firefox.conf.js"
   },
   "dependencies": {
     "allure-commandline": "^2.29.0"
