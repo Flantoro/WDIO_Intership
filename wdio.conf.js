@@ -12,12 +12,19 @@ export const config = {
     maxInstances: 10,
 
     capabilities: [{
+        maxInstances: 1,
         browserName: 'chrome',
-        maxInstances: 2,
         'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu']
-          }
-    }],
+        args: [
+        '--no-sandbox',
+        '--disable-infobars',
+        '--headless',
+        '--disable-gpu',
+        '--window-size=1920,1080'
+         ],
+        },
+        acceptInsecureCerts: true
+        }],
 
     logLevel: 'info',
    
@@ -39,9 +46,9 @@ export const config = {
 
     mochaOpts: {
         ui: 'bdd',
-        retries: 3,
+        //retries: 3,
         timeout: 60000,
-        require: ['./node_modules/mocha-retry']
+        //require: ['./node_modules/mocha-retry']
     },
 
     //
