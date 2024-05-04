@@ -7,10 +7,15 @@
     "@wdio/local-runner": "^8.32.3",
     "@wdio/mocha-framework": "^8.32.3",
     "@wdio/spec-reporter": "^8.32.2",
-    "mocha-retry": "^0.1.0"
+    "mocha-retry": "^0.1.0",
+    "chromedriver": "^120.0.0",
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-docker-service": "^3.2.1"
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js",
+    "wdio-docker": "wdio run ./configs/docker.conf.js",
+    "docker-compose": "docker-compose -f docker/docker-compose.yml up -d",
     "wdio:chrome": "wdio run ./configs/chrome.conf.js",
     "wdio:firefox": "wdio run ./configs/firefox.conf.js",
     "wdio:file": "wdio wdio.conf.js --spec ../test/specs/"
