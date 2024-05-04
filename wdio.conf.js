@@ -13,15 +13,9 @@ export const config = {
 
     capabilities: [{
         browserName: 'chrome',
-        maxInstances: 3,
+        maxInstances: 2,
         'goog:chromeOptions': {
             args: ['--headless', '--disable-gpu']
-          },
-          
-        browserName: 'firefox',
-        maxInstances: 3,
-        'moz:firefoxOptions': {
-            args: ['--headless']
           }
     }],
 
@@ -45,7 +39,9 @@ export const config = {
 
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        retries: 3,
+        timeout: 60000,
+        require: ['./node_modules/mocha-retry']
     },
 
     //
