@@ -18,6 +18,8 @@
     "docker-compose": "docker-compose -f docker/docker-compose.yml up -d",
     "wdio:chrome": "wdio run ./configs/chrome.conf.js",
     "wdio:firefox": "wdio run ./configs/firefox.conf.js",
+    "wdio:docker:chrome": "wdio run ./configs/chrome.docker.conf.js",
+		"wdio:docker:firefox": "wdio run ./configs/firefox.docker.conf.js",
     "wdio:file": "wdio wdio.conf.js --spec ../test/specs/"
   },
   "dependencies": {
