@@ -4,12 +4,6 @@ import EdgePage from '../pageobjects/EdgePage.js'
 import RandomData from '../helpers/RandomData.js'
 
 describe('Edge Page Tests', () => {
-    
-    beforeEach(async ()=> {
-        await browser.setWindowSize(1920, 1080);
-        await browser.url('https://telnyx.com/');
-        await MainPage.clickAcceptCookies();
-    })
 
     it('Kelsie Anderson profile picture shown on the Edge page', async () => {
         await expect(MainPage.getResourcesButton).toBeClickable();

@@ -6,12 +6,6 @@ import testData from '../fixtures/testData.js'
 
 describe('Main Page Tests', () => {
     
-    beforeEach(async ()=> {
-        await browser.setWindowSize(1920, 1080);
-        await browser.url('https://telnyx.com/');
-        await MainPage.clickAcceptCookies();
-    })
-
     it('"Download full coverage" message shown on the Global coverage page', async () => {
         await MainPage.scollToGlobalCoverageButton();
         await MainPage.clickGlobalCoverageButton();

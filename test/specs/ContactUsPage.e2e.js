@@ -4,12 +4,6 @@ import ContactUsPage from '../pageobjects/ContactUsPage.js'
 import testData from '../fixtures/testData.js'
 
 describe('Contact Us Page Tests', () => {
-    
-    beforeEach(async ()=> {
-        await browser.setWindowSize(1920, 1080);
-        await browser.url('https://telnyx.com/');
-        await MainPage.clickAcceptCookies();
-    })
 
     it('"Talk to an expert" title shown on the Contact-Us page', async () => {
         await MainPage.clickContactUsButton();

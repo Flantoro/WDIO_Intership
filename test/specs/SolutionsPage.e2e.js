@@ -3,12 +3,6 @@ import MainPage from '../pageobjects/MainPage.js'
 import SolutionsPage from '../pageobjects/SolutionsPage.js'
 
 describe('Solutions Page Tests', () => {
-    
-    beforeEach(async ()=> {
-        await browser.setWindowSize(1920, 1080);
-        await browser.url('https://telnyx.com/');
-        await MainPage.clickAcceptCookies();
-    })
 
     it('Travel title shown on the "Travel and Hospitality" page', async () => {
         await MainPage.clickSolutionsButton();

@@ -6,9 +6,6 @@ import RandomData from '../helpers/RandomData.js'
 describe('Sign Up Page Tests', () => {
     
     beforeEach(async ()=> {
-        await browser.setWindowSize(1920, 1080);
-        await browser.url('https://telnyx.com/');
-        await MainPage.clickAcceptCookies();
         await MainPage.clickSignUpButton();
     })
 
