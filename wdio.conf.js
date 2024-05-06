@@ -46,9 +46,19 @@ export const config = {
 
     mochaOpts: {
         ui: 'bdd',
-        //retries: 3,
+        retries: 3,
         timeout: 60000,
-        //require: ['./node_modules/mocha-retry']
+        require: ['./node_modules/mocha-retry']
+    },
+
+    windowSize: {
+        width: 1920,
+        height: 1080
+    },
+
+     before: async function (capabilities, specs) {
+        await browser.url('https://telnyx.com/');
+        await MainPage.clickAcceptCookies();
     },
 
     //
