@@ -18,13 +18,13 @@
 ### Run tests in Chrome
 
 ```bash
-npm run chrome
+npm run wdio:chrome
 ```
 
 ### Run tests in Firefox
 
 ```bash
-npm run firefox
+npm run wdio:firefox
 ```
 
 ## Docker Integration
